@@ -12,6 +12,7 @@
         "filament/filament": "^3.1",
         "guzzlehttp/guzzle": "^7.2",
         "hasnayeen/themes": "^3.0",
+        "joshembling/image-optimizer": "^1.2",
         "kenepa/translation-manager": "^4.0",
         "lara-zeus/sky": "^3.3",
         "laravel/framework": "^10.10",
