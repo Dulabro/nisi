@@ -52,13 +52,20 @@ class AdminPanelProvider extends PanelProvider
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
+                \Hasnayeen\Themes\Http\Middleware\SetTheme::class
+            ])
+            ->tenantMiddleware([
+
+                \Hasnayeen\Themes\Http\Middleware\SetTheme::class
             ])
             ->authMiddleware([
                 Authenticate::class,
             ])
             ->plugins([
                 FilamentSpatieLaravelBackupPlugin::make(),
-                TranslationManagerPlugin::make()
+                TranslationManagerPlugin::make(),
+                \Hasnayeen\Themes\ThemesPlugin::make()
+
             ]);
     }
 }
