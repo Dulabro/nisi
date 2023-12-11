@@ -21,6 +21,8 @@ use Illuminate\View\Middleware\ShareErrorsFromSession;
 use LaraZeus\Sky\SkyPlugin;
 use ShuvroRoy\FilamentSpatieLaravelBackup\FilamentSpatieLaravelBackupPlugin;
 use Kenepa\TranslationManager\TranslationManagerPlugin;
+use ShuvroRoy\FilamentSpatieLaravelHealth\FilamentSpatieLaravelHealthPlugin;
+use ShuvroRoy\FilamentSpatieLaravelHealth\Pages\HealthCheckResults;
 use Stephenjude\FilamentDebugger\DebuggerPlugin;
 
 class AdminPanelProvider extends PanelProvider
@@ -71,6 +73,8 @@ class AdminPanelProvider extends PanelProvider
                 DebuggerPlugin::make(),
                 SpatieLaravelTranslatablePlugin::make()->defaultLocales([config('app.locale')]),
                 SkyPlugin::make(),
+                FilamentSpatieLaravelHealthPlugin::make()
+                    ->usingPage(HealthCheckResults::class)
             ]);
     }
 }
